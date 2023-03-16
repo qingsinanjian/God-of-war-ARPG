@@ -19,6 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 224857189873224260}
+  - component: {fileID: 114385024739054802}
   m_Layer: 0
   m_Name: LoadingWnd
   m_TagString: Untagged
@@ -257,6 +258,21 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114385024739054802
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1060524005881176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e1fee84cb5db504cbe312ce4fb892ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  txtTips: {fileID: 114465588289536724}
+  imgFG: {fileID: 114265827352342216}
+  imgPoint: {fileID: 114403048832001280}
+  txtPre: {fileID: 114279281313452654}
 --- !u!114 &114403048832001280
 MonoBehaviour:
   m_ObjectHideFlags: 1

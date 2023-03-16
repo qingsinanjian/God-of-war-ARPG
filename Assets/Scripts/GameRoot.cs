@@ -9,9 +9,14 @@ using UnityEngine;
 
 public class GameRoot : MonoBehaviour 
 {
+    public static GameRoot Instance = null;
+    public LoadingWnd loadingWnd;
     private void Start()
     {
+        Instance = this;
+        DontDestroyOnLoad(this);
         Debug.Log("Game Start");
+        Init();
     }
 
     private void Init()

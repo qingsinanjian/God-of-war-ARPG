@@ -19,7 +19,11 @@ public class LoginSys : MonoBehaviour
     /// </summary>
     public void EnterLogin()
     {
+        GameRoot.Instance.loadingWnd.gameObject.SetActive(true);
+        GameRoot.Instance.loadingWnd.InitWnd();
         //TODO 异步加载登录场景
+
+        ResSvc.Instance.LoadSceneAsync(Constants.SceneLogin);
         //显示加载进度条，加载完成后打开登录注册场景
     }
 }
