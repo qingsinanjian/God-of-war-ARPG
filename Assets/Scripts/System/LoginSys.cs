@@ -32,5 +32,8 @@ public class LoginSys : SystemRoot
     {
         loginWnd.SetWndState(true);
         audioSvc.PlayBGAudio(Constants.BGLogin);
+        GameRoot.AddTips("xix");
+        GameRoot.AddTips("too");
+        GameRoot.AddTips("huh");
     }
 }

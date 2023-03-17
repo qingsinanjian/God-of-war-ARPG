@@ -11,8 +11,8 @@ using UnityEngine.UI;
 
 public class WindowRoot : MonoBehaviour
 {
-    public ResSvc resSvc;
-    public AudioSvc audioSvc;
+    protected ResSvc resSvc;
+    protected AudioSvc audioSvc;
 
     public void SetWndState(bool isActive = true)
     {

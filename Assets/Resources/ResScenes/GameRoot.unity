@@ -321,6 +321,35 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 71fdcdbcf225823458e26f6320d65357, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &455652623 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114489784272856012, guid: 71fdcdbcf225823458e26f6320d65357,
+    type: 2}
+  m_PrefabInternal: {fileID: 455652622}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!111 &455652624 stripped
+Animation:
+  m_PrefabParentObject: {fileID: 111128017889478854, guid: 71fdcdbcf225823458e26f6320d65357,
+    type: 2}
+  m_PrefabInternal: {fileID: 455652622}
+--- !u!1 &455652625 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1088644052668896, guid: 71fdcdbcf225823458e26f6320d65357,
+    type: 2}
+  m_PrefabInternal: {fileID: 455652622}
+--- !u!114 &455652626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 455652625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd3fcd351960224ca4ef0177ce1b45b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tipsAni: {fileID: 455652624}
+  txtTips: {fileID: 455652623}
 --- !u!224 &505685988 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224509868447293256, guid: 71fdcdbcf225823458e26f6320d65357,
@@ -470,7 +499,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb89c539318f85d4b8cf44acf159162d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resSvc: {fileID: 0}
   iptAcct: {fileID: 804299922}
   iptPass: {fileID: 804299921}
   btnEnter: {fileID: 804299920}
@@ -792,7 +820,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1953807530992242, guid: ce6d3e46d8e116d48a357dc973f005c5, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ce6d3e46d8e116d48a357dc973f005c5, type: 2}
@@ -1045,6 +1073,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loadingWnd: {fileID: 1913288434}
+  dynamicWnd: {fileID: 455652626}
 --- !u!114 &1568418699
 MonoBehaviour:
   m_ObjectHideFlags: 0

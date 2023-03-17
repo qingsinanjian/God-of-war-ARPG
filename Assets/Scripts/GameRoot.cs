@@ -11,6 +11,7 @@ public class GameRoot : MonoBehaviour
 {
     public static GameRoot Instance = null;
     public LoadingWnd loadingWnd;
+    public DynamicWnd dynamicWnd;
     private void Start()
     {
         Instance = this;
@@ -31,8 +32,24 @@ public class GameRoot : MonoBehaviour
         LoginSys loginSys = GetComponent<LoginSys>();
         loginSys.InitSys();
 
+        ClearUIRoot();
+
         //进入登录场景并加载相应UI
         loginSys.EnterLogin();
+    }
 
+    private void ClearUIRoot()
+    {
+        Transform canvas = transform.Find("Canvas");
+        for (int i = 0; i < canvas.childCount; i++)
+        {
+            canvas.GetChild(i).gameObject.SetActive(false);
+        }
+        dynamicWnd.SetWndState(true);
+    }
+
+    public static void AddTips(string msg)
+    {
+        Instance.dynamicWnd.AddTips(msg);
     }
 }
