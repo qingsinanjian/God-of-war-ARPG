@@ -11,6 +11,7 @@ public class LoginSys : SystemRoot
 {
     public static LoginSys Instance;
     public LoginWnd loginWnd;
+    public CreateWnd createWnd;
     public override void InitSys()
     {
         base.InitSys();
@@ -31,9 +32,15 @@ public class LoginSys : SystemRoot
     public void OpenLoginWnd()
     {
         loginWnd.SetWndState(true);
-        audioSvc.PlayBGAudio(Constants.BGLogin);
-        GameRoot.AddTips("xix");
-        GameRoot.AddTips("too");
-        GameRoot.AddTips("huh");
+        audioSvc.PlayBGAudio(Constants.BGLogin);      
+    }
+
+    public void RspLogin()
+    {
+        GameRoot.AddTips("登录成功");
+        //打开角色创建界面
+        createWnd.SetWndState(true);
+        //关闭登录界面
+        loginWnd.SetWndState(false);
     }
 }
