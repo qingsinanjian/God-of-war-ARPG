@@ -2,13 +2,13 @@
 文件：LoadingWnd.cs
 作者：吴炯鑫
 日期：2023/3/16 20:29:6
-功能：Nothing
+功能：加载进度界面
 *****************************************************/
 
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LoadingWnd : MonoBehaviour 
+public class LoadingWnd : WindowRoot 
 {
     public Text txtTips;
     public Image imgFG;
@@ -17,8 +17,9 @@ public class LoadingWnd : MonoBehaviour
 
     private float fgWidth;
 
-    public void InitWnd()
+    protected override void InitWnd()
     {
+        base.InitWnd();
         fgWidth = imgFG.GetComponent<RectTransform>().sizeDelta.x;
         txtTips.text = "这是一条小提示";
         imgFG.fillAmount = 0;

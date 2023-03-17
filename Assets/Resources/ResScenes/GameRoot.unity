@@ -430,6 +430,50 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 28ce6045722660b4c82bf66d18eafda0, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &804299920 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114489630228068566, guid: 28ce6045722660b4c82bf66d18eafda0,
+    type: 2}
+  m_PrefabInternal: {fileID: 804299919}
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &804299921 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114664907035373552, guid: 28ce6045722660b4c82bf66d18eafda0,
+    type: 2}
+  m_PrefabInternal: {fileID: 804299919}
+  m_Script: {fileID: 575553740, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &804299922 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114639821160959024, guid: 28ce6045722660b4c82bf66d18eafda0,
+    type: 2}
+  m_PrefabInternal: {fileID: 804299919}
+  m_Script: {fileID: 575553740, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &804299923 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114323295738001602, guid: 28ce6045722660b4c82bf66d18eafda0,
+    type: 2}
+  m_PrefabInternal: {fileID: 804299919}
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!1 &804299924 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1800042682538374, guid: 28ce6045722660b4c82bf66d18eafda0,
+    type: 2}
+  m_PrefabInternal: {fileID: 804299919}
+--- !u!114 &804299925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 804299924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb89c539318f85d4b8cf44acf159162d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iptAcct: {fileID: 804299922}
+  iptPass: {fileID: 804299921}
+  btnEnter: {fileID: 804299920}
+  btnNotice: {fileID: 804299923}
 --- !u!1001 &1286206846
 Prefab:
   m_ObjectHideFlags: 0
@@ -755,6 +799,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 225a35b058e8ac74c9e0496367ad6677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loginWnd: {fileID: 804299925}
 --- !u!114 &1568418697
 MonoBehaviour:
   m_ObjectHideFlags: 0
