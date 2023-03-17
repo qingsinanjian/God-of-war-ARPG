@@ -21,15 +21,15 @@ public class LoadingWnd : WindowRoot
     {
         base.InitWnd();
         fgWidth = imgFG.GetComponent<RectTransform>().sizeDelta.x;
-        txtTips.text = "这是一条小提示";
+        SetText(txtTips, "这是一条小提示");
         imgFG.fillAmount = 0;
         imgPoint.transform.localPosition = new Vector3(-fgWidth / 2, 0);
-        txtPre.text = "0%";
+        SetText(txtPre, "0%");
     }
 
     public void SetProgress(float progress)
     {
-        txtPre.text = (int)(progress * 100) + "%";
+        SetText(txtPre, (int)(progress * 100) + "%");
         imgFG.fillAmount = progress;
         imgPoint.rectTransform.anchoredPosition = new Vector2(progress * fgWidth - fgWidth / 2, 0);
     }

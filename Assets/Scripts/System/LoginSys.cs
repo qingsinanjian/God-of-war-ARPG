@@ -28,5 +28,6 @@ public class LoginSys : MonoBehaviour
     public void OpenLoginWnd()
     {
         loginWnd.SetWndState(true);
+        AudioSvc.Instance.PlayBGAudio(Constants.BGLogin);
     }
 }
