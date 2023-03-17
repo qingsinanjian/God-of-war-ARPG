@@ -7,11 +7,14 @@
 
 using UnityEngine;
 
-public class LoginSys : MonoBehaviour 
+public class LoginSys : SystemRoot 
 {
+    public static LoginSys Instance;
     public LoginWnd loginWnd;
-    public void InitSys()
+    public override void InitSys()
     {
+        base.InitSys();
+        Instance = this;
         Debug.Log("Init LoginSys...");
     }
 
@@ -21,13 +24,13 @@ public class LoginSys : MonoBehaviour
     public void EnterLogin()
     {
         //TODO 异步加载登录场景
-        ResSvc.Instance.LoadSceneAsync(Constants.SceneLogin, OpenLoginWnd);
+        resSvc.LoadSceneAsync(Constants.SceneLogin, OpenLoginWnd);
     }
 
     //显示加载进度条，加载完成后打开登录注册场景
     public void OpenLoginWnd()
     {
         loginWnd.SetWndState(true);
-        AudioSvc.Instance.PlayBGAudio(Constants.BGLogin);
+        audioSvc.PlayBGAudio(Constants.BGLogin);
     }
 }
