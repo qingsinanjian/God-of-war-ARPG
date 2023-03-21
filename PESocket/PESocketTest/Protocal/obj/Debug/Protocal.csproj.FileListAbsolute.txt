@@ -1,0 +1,6 @@
+C:\MySoftware\UnityProject\PESocket\PESocketTest\Protocal\obj\Debug\Protocal.csproj.CoreCompileInputs.cache
+C:\MySoftware\UnityProject\PESocket\PESocketTest\Protocal\obj\Debug\Protocal.csproj.CopyComplete
+C:\MySoftware\UnityProject\PESocket\PESocketTest\Protocal\obj\Debug\Protocal.dll
+C:\MySoftware\UnityProject\PESocket\PESocketTest\Protocal\obj\Debug\Protocal.pdb
+C:\MySoftware\UnityProject\PESocket\Protocal.dll
+C:\MySoftware\UnityProject\PESocket\Protocal.pdb
