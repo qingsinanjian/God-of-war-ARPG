@@ -1,4 +1,6 @@
 ﻿//网络服务
+using PENet;
+using PEProtocol;
 
 public class NetSvc
 {
@@ -17,7 +19,9 @@ public class NetSvc
 
     public void Init()
     {
-
+        PESocket<ServerSession, GameMsg> server = new PESocket<ServerSession, GameMsg>();
+        server.StartAsServer(SrvCfg.srvIP, SrvCfg.srvPort);
+        PETool.LogMsg("NetSvc Init Done");
     }
 }
 

@@ -23,6 +23,9 @@ public class GameRoot : MonoBehaviour
     private void Init()
     {
         //服务模块初始化
+        NetSvc netSvc = GetComponent<NetSvc>();
+        netSvc.Init();
+
         ResSvc resSvc = GetComponent<ResSvc>();
         resSvc.InitSvc();
         //声音播放服务初始化
