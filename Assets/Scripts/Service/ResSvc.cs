@@ -18,7 +18,7 @@ public class ResSvc : MonoBehaviour
     {
         Instance= this;
         InitRDNameCfg();
-        Debug.Log("Init ResSvc...");
+        PECommon.Log("Init ResSvc...");
     }
 
     private Action prgCB;
@@ -78,7 +78,7 @@ public class ResSvc : MonoBehaviour
         TextAsset xml = Resources.Load<TextAsset>(PathDefine.RDNameCfg);
         if (!xml)
         {
-            Debug.Log("xml file:" + PathDefine.RDNameCfg + "not exist");
+            PECommon.Log("xml file:" + PathDefine.RDNameCfg + "not exist");
         }
         else
         {

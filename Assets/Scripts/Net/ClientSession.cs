@@ -13,16 +13,16 @@ public class ClientSession:PESession<GameMsg>
 {
     protected override void OnConnected()
     {
-        Debug.Log("Server Connect");
+        PECommon.Log("Server Connect");
     }
 
     protected override void OnReciveMsg(GameMsg msg)
     {
-        Debug.Log("Server Req:" + msg.text);
+        PECommon.Log("Server Req:" + msg.text);
     }
 
     protected override void OnDisConnected()
     {
-        Debug.Log("Server DisConnect");
+        PECommon.Log("Server DisConnect");
     }
 }

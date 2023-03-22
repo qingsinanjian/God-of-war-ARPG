@@ -42,7 +42,7 @@ public class NetSvc : MonoBehaviour
             }
         });
         client.StartAsClient(SrvCfg.srvIP, SrvCfg.srvPort);
-        Debug.Log("Init NetSvc...");
+        PECommon.Log("Init NetSvc...");
     }
 
     private void Update()

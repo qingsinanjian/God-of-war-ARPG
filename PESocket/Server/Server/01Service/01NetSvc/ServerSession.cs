@@ -8,7 +8,7 @@ public class ServerSession : PESession<GameMsg>
 {
     protected override void OnConnected()
     {
-        PETool.LogMsg("Client Connect");
+        PECommon.Log("Client Connect");
         SendMsg(new GameMsg()
         {
             text = "Welcome to Connect."
@@ -17,7 +17,7 @@ public class ServerSession : PESession<GameMsg>
 
     protected override void OnReciveMsg(GameMsg msg)
     {
-        PETool.LogMsg("Client Req:" + msg.text);
+        PECommon.Log("Client Req:" + msg.text);
         SendMsg(new GameMsg()
         {
             text = "Srv Rsp:" + msg.text
@@ -26,7 +26,7 @@ public class ServerSession : PESession<GameMsg>
 
     protected override void OnDisConnected()
     {
-        PETool.LogMsg("Client DisConnect");
+        PECommon.Log("Client DisConnect");
     }
 }
 

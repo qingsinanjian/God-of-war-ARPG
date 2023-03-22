@@ -16,7 +16,7 @@ public class GameRoot : MonoBehaviour
     {
         Instance = this;
         DontDestroyOnLoad(this);
-        Debug.Log("Game Start");
+        PECommon.Log("Game Start");
         Init();
     }
 

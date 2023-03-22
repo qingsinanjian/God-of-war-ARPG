@@ -1,5 +1,4 @@
 ﻿//登录业务系统
-using PENet;
 
 public class LoginSys
 {
@@ -18,7 +17,7 @@ public class LoginSys
 
     public void Init()
     {
-        PETool.LogMsg("LoginSys Init Done");
+        PECommon.Log("LoginSys Init Done");
     }
 }
 
