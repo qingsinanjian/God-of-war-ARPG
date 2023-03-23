@@ -6,6 +6,7 @@
 *****************************************************/
 
 using UnityEngine;
+using PEProtocol;
 
 public class LoginSys : SystemRoot 
 {
@@ -35,11 +36,20 @@ public class LoginSys : SystemRoot
         audioSvc.PlayBGAudio(Constants.BGLogin);      
     }
 
-    public void RspLogin()
+    public void RspLogin(GameMsg msg)
     {
         GameRoot.AddTips("登录成功");
-        //打开角色创建界面
-        createWnd.SetWndState(true);
+        GameRoot.Instance.SetPlayerData(msg.rspLogin);
+        if(msg.rspLogin.playerData.name == "")
+        {
+            //打开角色创建界面
+            createWnd.SetWndState(true);
+        }
+        else
+        {
+            //TODO
+            //进入主城
+        }
         //关闭登录界面
         loginWnd.SetWndState(false);
     }

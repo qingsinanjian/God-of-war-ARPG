@@ -8,11 +8,15 @@
 using UnityEngine;
 using PENet;
 using PEProtocol;
+using System.Collections.Generic;
 
 public class NetSvc : MonoBehaviour 
 {
     public static NetSvc Instance = null;
     private PESocket<ClientSession, GameMsg> client = null;
+
+    private Queue<GameMsg> msgQue = new Queue<GameMsg>();
+    private static readonly string obj = "lock";
 
     public void InitSvc()
     {
@@ -55,6 +59,53 @@ public class NetSvc : MonoBehaviour
         {
             GameRoot.AddTips("服务器未连接");
             InitSvc();
+        }
+    }
+
+    public void AddNetPkg(GameMsg msg)
+    {
+        lock (obj)
+        {
+            msgQue.Enqueue(msg);
+        }
+    }
+
+    private void Update()
+    {
+        if(msgQue.Count > 0)
+        {
+            lock (obj)
+            {
+                GameMsg msg = msgQue.Dequeue();
+                ProcessMsg(msg);
+            }
+        }
+    }
+
+    private void ProcessMsg(GameMsg msg)
+    {
+        if(msg.err != (int)ErrorCode.None)
+        {
+            switch ((ErrorCode)msg.err)
+            {
+                case ErrorCode.AcctIsOnline:
+                    GameRoot.AddTips("当前账号已上线");
+                    break;
+                case ErrorCode.WrongPass:
+                    GameRoot.AddTips("密码错误");
+                    break;
+            }
+            return;
+        }
+        switch ((CMD)msg.cmd)
+        {
+            case CMD.None:
+                break;
+            case CMD.ReqLogin:
+                break;
+            case CMD.RspLogin:
+                LoginSys.Instance.RspLogin(msg);
+                break;
         }
     }
 }

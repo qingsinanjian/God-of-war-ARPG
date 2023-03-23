@@ -6,6 +6,7 @@
 *****************************************************/
 
 using UnityEngine;
+using PEProtocol;
 
 public class GameRoot : MonoBehaviour 
 {
@@ -54,5 +55,20 @@ public class GameRoot : MonoBehaviour
     public static void AddTips(string msg)
     {
         Instance.dynamicWnd.AddTips(msg);
+    }
+
+    private PlayerData playerData = null;
+
+    public PlayerData PlayerData
+    {
+        get
+        {
+            return playerData;
+        }
+    }
+
+    public void SetPlayerData(RspLogin data)
+    {
+        playerData = data.playerData;
     }
 }

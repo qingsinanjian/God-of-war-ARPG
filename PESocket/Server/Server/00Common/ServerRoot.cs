@@ -26,5 +26,10 @@ public class ServerRoot
         //业务系统层
         LoginSys.Instance.Init();
     }
+
+    public void Update()
+    {
+        NetSvc.Instance.Update();
+    }
 }
 
