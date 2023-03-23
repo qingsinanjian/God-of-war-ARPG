@@ -17,11 +17,13 @@ public class CacheSvc
         }
     }
 
+    private DBMgr dbMgr = null;
     private Dictionary<string, ServerSession> onLineAcctDic = new Dictionary<string, ServerSession>();
     private Dictionary<ServerSession, PlayerData> onLineSessionDic = new Dictionary<ServerSession, PlayerData>();
 
     public void Init()
     {
+        dbMgr = DBMgr.Instance;
         PECommon.Log("CacheSvc Init Done");
     }
 
@@ -35,9 +37,8 @@ public class CacheSvc
     /// </summary>
     public PlayerData GetPlayerData(string acct, string pass)
     {
-        //TODO
         //从数据库中查找账号数据
-        return null;
+        return dbMgr.QueryPlayerData(acct, pass);
     }
 
     /// <summary>
