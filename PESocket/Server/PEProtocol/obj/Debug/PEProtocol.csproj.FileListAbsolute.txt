@@ -7,4 +7,3 @@ C:\MySoftware\UnityProject\God-of-war-ARPG\PESocket\Server\PEProtocol\obj\Debug\
 C:\MySoftware\UnityProject\God-of-war-ARPG\PESocket\Server\PEProtocol\obj\Debug\PEProtocol.pdb
 C:\MySoftware\UnityProject\God-of-war-ARPG\Assets\Scripts\Net\PEProtocol.dll
 C:\MySoftware\UnityProject\God-of-war-ARPG\Assets\Scripts\Net\PEProtocol.pdb
-C:\MySoftware\UnityProject\God-of-war-ARPG\PESocket\Server\PEProtocol\obj\Debug\PEProtocol.csprojAssemblyReference.cache

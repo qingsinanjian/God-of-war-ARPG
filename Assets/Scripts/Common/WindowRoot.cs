@@ -13,6 +13,7 @@ public class WindowRoot : MonoBehaviour
 {
     protected ResSvc resSvc;
     protected AudioSvc audioSvc;
+    protected NetSvc netSvc;
 
     public void SetWndState(bool isActive = true)
     {
@@ -34,12 +35,14 @@ public class WindowRoot : MonoBehaviour
     {
         resSvc = ResSvc.Instance;
         audioSvc = AudioSvc.Instance;
+        netSvc = NetSvc.Instance;
     }
 
     protected virtual void ClearWnd()
     {
         resSvc = null;
         audioSvc = null;
+        netSvc = null;
     }
 
     #region Tool Funcitions

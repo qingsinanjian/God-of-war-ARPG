@@ -9,19 +9,13 @@ public class ServerSession : PESession<GameMsg>
     protected override void OnConnected()
     {
         PECommon.Log("Client Connect");
-        SendMsg(new GameMsg()
-        {
-            text = "Welcome to Connect."
-        });
     }
 
     protected override void OnReciveMsg(GameMsg msg)
     {
-        PECommon.Log("Client Req:" + msg.text);
-        SendMsg(new GameMsg()
-        {
-            text = "Srv Rsp:" + msg.text
-        });
+        PECommon.Log("RcvPack CMD:" + ((CMD)msg.cmd).ToString());
+        MsgPack pack = new MsgPack(this, msg);
+        NetSvc.Instance.AddMsgQue(pack);
     }
 
     protected override void OnDisConnected()

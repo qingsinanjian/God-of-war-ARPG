@@ -24,7 +24,7 @@ public class GameRoot : MonoBehaviour
     {
         //服务模块初始化
         NetSvc netSvc = GetComponent<NetSvc>();
-        netSvc.Init();
+        netSvc.InitSvc();
 
         ResSvc resSvc = GetComponent<ResSvc>();
         resSvc.InitSvc();

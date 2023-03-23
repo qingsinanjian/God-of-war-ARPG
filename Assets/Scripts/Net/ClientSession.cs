@@ -18,7 +18,7 @@ public class ClientSession:PESession<GameMsg>
 
     protected override void OnReciveMsg(GameMsg msg)
     {
-        PECommon.Log("Server Req:" + msg.text);
+        PECommon.Log("Server Req:");
     }
 
     protected override void OnDisConnected()

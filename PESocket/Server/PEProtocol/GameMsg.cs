@@ -7,7 +7,22 @@ namespace PEProtocol
     [Serializable]
     public class GameMsg:PEMsg
     {
-        public string text;
+        public ReqLogin reqLogin;
+    }
+
+    [Serializable]
+    public class ReqLogin
+    {
+        public string acct;
+        public string pass;
+    }
+
+    public enum CMD
+    {
+        None,
+        //登录相关 100
+        ReqLogin = 101,
+        RspLogin = 102
     }
 
     public class SrvCfg

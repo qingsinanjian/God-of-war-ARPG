@@ -14,7 +14,7 @@ public class NetSvc : MonoBehaviour
     public static NetSvc Instance = null;
     private PESocket<ClientSession, GameMsg> client = null;
 
-    public void Init()
+    public void InitSvc()
     {
         Instance = this;
         client = new PESocket<ClientSession, GameMsg>();
@@ -45,14 +45,16 @@ public class NetSvc : MonoBehaviour
         PECommon.Log("Init NetSvc...");
     }
 
-    private void Update()
+    public void SendMsg(GameMsg msg)
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if(client.session != null)
         {
-            client.session.SendMsg(new GameMsg()
-            {
-                text = "hello unity"
-            });
+            client.session.SendMsg(msg);
+        }
+        else
+        {
+            GameRoot.AddTips("服务器未连接");
+            InitSvc();
         }
     }
 }
