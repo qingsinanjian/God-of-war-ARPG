@@ -53,4 +53,14 @@ public class LoginSys : SystemRoot
         //关闭登录界面
         loginWnd.SetWndState(false);
     }
+
+    public void RspRename(GameMsg msg)
+    {
+        GameRoot.Instance.SetPlayerName(msg.rspRename.name);
+        //TODO 跳转场景，进入主城
+        //打开主城界面
+
+        //关闭创建角色界面
+        createWnd.SetWndState(false);
+    }
 }

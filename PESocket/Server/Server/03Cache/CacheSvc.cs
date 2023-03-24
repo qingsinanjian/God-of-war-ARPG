@@ -69,7 +69,7 @@ public class CacheSvc
 
     public bool UpdatePlayerData(int id, PlayerData pd)
     {
-        //TODO
+        dbMgr.UpdatePlayerData(id, pd);
         return true;
     }
 }

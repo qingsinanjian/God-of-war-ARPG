@@ -19,6 +19,7 @@ public class ClientSession:PESession<GameMsg>
 
     protected override void OnReciveMsg(GameMsg msg)
     {
+        NetSvc.Instance.AddNetPkg(msg);
         PECommon.Log("RcvPack CMD :" + ((CMD)msg.cmd).ToString());
     }
 

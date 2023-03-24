@@ -138,5 +138,31 @@ public class DBMgr
         }
         return exist;
     }
+
+    public bool UpdatePlayerData(int id, PlayerData playerData)
+    {
+        try
+        {
+            //更新玩家数据
+            MySqlCommand cmd = new MySqlCommand(
+            "update account set name=@name,level=@level,exp=@exp,power=@power,coin=@coin,diamond=@diamond where id =@id", conn);
+            cmd.Parameters.AddWithValue("id", id);
+            cmd.Parameters.AddWithValue("name", playerData.name);
+            cmd.Parameters.AddWithValue("level", playerData.lv);
+            cmd.Parameters.AddWithValue("exp", playerData.exp);
+            cmd.Parameters.AddWithValue("power", playerData.power);
+            cmd.Parameters.AddWithValue("coin", playerData.coin);
+            cmd.Parameters.AddWithValue("diamond", playerData.diamond);
+
+            //TOADD Others
+            cmd.ExecuteNonQuery();
+        }
+        catch (Exception e)
+        {
+            PECommon.Log("Update PlayerData Error:" + e, LogType.Error);
+            return false;
+        }
+        return true;
+    }
 }
 

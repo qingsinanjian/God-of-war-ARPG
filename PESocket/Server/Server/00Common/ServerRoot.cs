@@ -22,6 +22,7 @@ public class ServerRoot
         DBMgr.Instance.Init();
         //服务层
         NetSvc.Instance.Init();
+        CacheSvc.Instance.Init();
 
         //业务系统层
         LoginSys.Instance.Init();

@@ -99,12 +99,11 @@ public class NetSvc : MonoBehaviour
         }
         switch ((CMD)msg.cmd)
         {
-            case CMD.None:
-                break;
-            case CMD.ReqLogin:
-                break;
             case CMD.RspLogin:
                 LoginSys.Instance.RspLogin(msg);
+                break;
+            case CMD.RspRename:
+                LoginSys.Instance.RspRename(msg);
                 break;
         }
     }
