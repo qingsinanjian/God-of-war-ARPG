@@ -69,6 +69,7 @@ namespace PEProtocol
         AcctIsOnline,//账号已上线
         WrongPass,//密码错误
         NameIsExit,//名字已经存在
+        UpdateDBError,//更新数据库错误
     }
 
     public class SrvCfg

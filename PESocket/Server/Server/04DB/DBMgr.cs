@@ -110,5 +110,33 @@ public class DBMgr
         }
         return id;
     }
+
+    public bool QueryNameByData(string name)
+    {
+        bool exist = false;
+        MySqlDataReader reader = null;
+        try
+        {
+            MySqlCommand cmd = new MySqlCommand("select * from account where name = @name", conn);
+            cmd.Parameters.AddWithValue("name", name);
+            reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                exist = true;
+            }
+        }
+        catch (Exception e)
+        {
+            PECommon.Log("Query Name State Error:" + e, LogType.Error);
+        }
+        finally
+        {
+            if(reader != null)
+            {
+                reader.Close();
+            }
+        }
+        return exist;
+    }
 }
 

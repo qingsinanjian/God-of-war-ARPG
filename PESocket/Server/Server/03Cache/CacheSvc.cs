@@ -49,5 +49,28 @@ public class CacheSvc
         onLineAcctDic.Add(acct, session);
         onLineSessionDic.Add(session, playerData);
     }
+
+    public bool IsNameExist(string name)
+    {
+        return dbMgr.QueryNameByData(name);
+    }
+
+    public PlayerData GetPlayerDataBySession(ServerSession session)
+    {
+        if(onLineSessionDic.TryGetValue(session, out PlayerData playerData))
+        {
+            return playerData;
+        }
+        else
+        {
+            return null;
+        }
+    }
+
+    public bool UpdatePlayerData(int id, PlayerData pd)
+    {
+        //TODO
+        return true;
+    }
 }
 
