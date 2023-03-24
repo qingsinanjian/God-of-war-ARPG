@@ -9,3 +9,4 @@ C:\MySoftware\UnityProject\God-of-war-ARPG\PESocket\Server\Server\obj\Debug\Serv
 C:\MySoftware\UnityProject\God-of-war-ARPG\PESocket\Server\Server\obj\Debug\Server.csproj.CopyComplete
 C:\MySoftware\UnityProject\God-of-war-ARPG\PESocket\Server\Server\obj\Debug\Server.exe
 C:\MySoftware\UnityProject\God-of-war-ARPG\PESocket\Server\Server\obj\Debug\Server.pdb
+C:\MySoftware\UnityProject\God-of-war-ARPG\PESocket\Server\Server\bin\Debug\MySql.Data.dll

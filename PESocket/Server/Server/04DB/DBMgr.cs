@@ -22,7 +22,9 @@ public class DBMgr
     public void Init()
     {
         conn = new MySqlConnection("Server = localhost;User id = root;password=;Database=darkgod;Charset=utf8");
+        conn.Open();
         PECommon.Log("DBMgr Init Done");
+        //QueryPlayerData("wuchao", "15fa");
     }
     
     public PlayerData QueryPlayerData(string acct, string pass)
@@ -64,6 +66,7 @@ public class DBMgr
         {
             if (isNew)
             {
+                if (reader != null) reader.Close();
                 //不存在账号数据，创建新的默认账号数据，并返回
                 playerData = new PlayerData()
                 {
@@ -84,7 +87,28 @@ public class DBMgr
     
     private int InsertNewAcctData(string acct, string pass, PlayerData pd)
     {
-        return 0;
+        int id = -1;
+        try
+        {
+            MySqlCommand cmd = new MySqlCommand(
+            "insert into account set acct=@acct,pass =@pass,name=@name,level=@level,exp=@exp,power=@power,coin=@coin,diamond=@diamond", conn);
+            cmd.Parameters.AddWithValue("acct", acct);
+            cmd.Parameters.AddWithValue("pass", pass);
+            cmd.Parameters.AddWithValue("name", pd.name);
+            cmd.Parameters.AddWithValue("level", pd.lv);
+            cmd.Parameters.AddWithValue("exp", pd.exp);
+            cmd.Parameters.AddWithValue("power", pd.power);
+            cmd.Parameters.AddWithValue("coin", pd.coin);
+            cmd.Parameters.AddWithValue("diamond", pd.diamond);
+
+            cmd.ExecuteNonQuery();
+            id = (int)cmd.LastInsertedId;
+        }
+        catch (Exception e)
+        {
+            PECommon.Log("Insert PlayerData Error:" + e, LogType.Error);
+        }
+        return id;
     }
 }
 
