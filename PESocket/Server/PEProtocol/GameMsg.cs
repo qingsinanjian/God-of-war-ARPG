@@ -9,8 +9,11 @@ namespace PEProtocol
     {
         public ReqLogin reqLogin;
         public RspLogin rspLogin;
+        public ReqRename reqRename;
+        public RspRename rspRename;
     }
 
+    #region 登录相关
     [Serializable]
     public class ReqLogin
     {
@@ -36,19 +39,36 @@ namespace PEProtocol
         //TOADD
     }
 
+    [Serializable]
+    public class ReqRename
+    {
+        public string name; 
+    }
+
+    [Serializable]
+    public class RspRename
+    {
+        public string name;
+    }
+    #endregion
+
     public enum CMD
     {
         None,
         //登录相关 100
         ReqLogin = 101,
-        RspLogin = 102
+        RspLogin = 102,
+
+        ReqRename = 103,
+        RspRename = 104
     }
 
     public enum ErrorCode
     {
         None = 0,//没有错误
         AcctIsOnline,//账号已上线
-        WrongPass//密码错误
+        WrongPass,//密码错误
+        NameIsExit,//名字已经存在
     }
 
     public class SrvCfg

@@ -7,6 +7,7 @@
 
 using UnityEngine;
 using UnityEngine.UI;
+using PEProtocol;
 
 public class CreateWnd : WindowRoot 
 {
@@ -30,6 +31,15 @@ public class CreateWnd : WindowRoot
         if(iptName.text != "")
         {
             //TODO 发送名字数据到服务器，登录主城
+            GameMsg msg = new GameMsg()
+            {
+                cmd = (int)CMD.ReqRename,
+                reqRename = new ReqRename()
+                {
+                    name = iptName.text
+                }
+            };
+            netSvc.SendMsg(msg);
         }
         else
         {
