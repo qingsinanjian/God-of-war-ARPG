@@ -88,6 +88,10 @@ public class NetSvc : MonoBehaviour
         {
             switch ((ErrorCode)msg.err)
             {
+                case ErrorCode.UpdateDBError:
+                    PECommon.Log("数据库更新异常", LogType.Error);
+                    GameRoot.AddTips("网络不稳定");
+                    break;
                 case ErrorCode.AcctIsOnline:
                     GameRoot.AddTips("当前账号已上线");
                     break;
