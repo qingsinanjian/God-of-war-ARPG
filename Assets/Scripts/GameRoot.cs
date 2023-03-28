@@ -35,6 +35,8 @@ public class GameRoot : MonoBehaviour
         //业务系统初始化
         LoginSys loginSys = GetComponent<LoginSys>();
         loginSys.InitSys();
+        MainCitySys mainCitySys = GetComponent<MainCitySys>();
+        mainCitySys.InitSys();
 
         ClearUIRoot();
 
