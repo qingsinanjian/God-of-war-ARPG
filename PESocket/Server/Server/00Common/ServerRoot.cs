@@ -32,5 +32,15 @@ public class ServerRoot
     {
         NetSvc.Instance.Update();
     }
+
+    private int sessionID = 0;
+    public int GetSessionID()
+    {
+        if(sessionID == int.MaxValue)
+        {
+            sessionID = 0;
+        }
+        return sessionID += 1;
+    }
 }
 

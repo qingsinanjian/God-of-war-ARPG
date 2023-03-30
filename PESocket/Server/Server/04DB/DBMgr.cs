@@ -73,9 +73,9 @@ public class DBMgr
         }
         finally
         {
+            if (reader != null) reader.Close();
             if (isNew)
             {
-                if (reader != null) reader.Close();
                 //不存在账号数据，创建新的默认账号数据，并返回
                 playerData = new PlayerData()
                 {
