@@ -49,6 +49,7 @@ public class LoginSys : SystemRoot
         {
             //TODO
             //进入主城
+            MainCitySys.Instance.EnterMainCity();
         }
         //关闭登录界面
         loginWnd.SetWndState(false);
