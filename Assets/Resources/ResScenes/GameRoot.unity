@@ -867,7 +867,6 @@ GameObject:
   - component: {fileID: 1471708363}
   - component: {fileID: 1471708362}
   - component: {fileID: 1471708361}
-  - component: {fileID: 1471708360}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -875,13 +874,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1471708360
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1471708359}
-  m_Enabled: 1
 --- !u!124 &1471708361
 Behaviour:
   m_ObjectHideFlags: 0
@@ -952,6 +944,7 @@ GameObject:
   - component: {fileID: 1568418696}
   - component: {fileID: 1568418699}
   - component: {fileID: 1568418701}
+  - component: {fileID: 1568418702}
   m_Layer: 0
   m_Name: GameRoot
   m_TagString: Untagged
@@ -1049,6 +1042,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCityWnd: {fileID: 1608522540}
+--- !u!81 &1568418702
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1568418694}
+  m_Enabled: 1
 --- !u!224 &1600833413 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224822401462433132, guid: 28ce6045722660b4c82bf66d18eafda0,
